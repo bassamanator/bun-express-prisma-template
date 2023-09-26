@@ -1,23 +1,19 @@
 {
   "name": "express-api-starter-ts",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": " A basic starter for an express.js API with Typescript",
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "dev": "nodemon src/index.ts",
+    "dev": "ts-node src/index.ts",
     "build": "tsc",
     "lint": "eslint --fix src test",
     "test": "jest",
-    "typecheck": "tsc --noEmit",
+    "type-check": "tsc --pretty --noEmit",
     "prepare": "husky install"
   },
   "keywords": [],
-  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/w3cj/express-api-starter.git"
-  },
+  "author": "Bassam Husain",
   "license": "MIT",
   "dependencies": {
     "compression": "^1.7.4",
