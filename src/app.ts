@@ -5,9 +5,9 @@ import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
-import api from './api';
 import MessageResponse from './interfaces/MessageResponse';
 import * as middlewares from './middleware';
+import router from './router';
 
 require('dotenv').config();
 
@@ -26,7 +26,7 @@ app.get<{}, MessageResponse>('/', (req, res) => {
   });
 });
 
-app.use('/api/v1', api);
+app.use('/api/v1', router());
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
