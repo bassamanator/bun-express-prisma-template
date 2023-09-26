@@ -18,6 +18,7 @@ app.use(helmet());
 app.use(cors({ credentials: true }));
 app.use(compression());
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get<{}, MessageResponse>('/', (req, res) => {
