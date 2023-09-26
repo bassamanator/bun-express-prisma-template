@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "plugin:node/recommended"],
+  "extends": ["eslint:recommended", "plugin:node/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     // Only ESLint 6.2.0 and later support ES2020.
