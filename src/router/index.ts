@@ -1,6 +1,6 @@
 import express from 'express';
 
-import emojis from './emojis';
+import emojis from './emojis.rt';
 
 const router = express.Router();
 
