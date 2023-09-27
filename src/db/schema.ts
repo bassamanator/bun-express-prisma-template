@@ -1,10 +1,8 @@
-// import { drizzle } from 'drizzle-orm/node-postgres';
-// import { pgTable, serial, text, varchar } from 'drizzle-orm/pg-core';
-// import { Client } from 'pg';
+import { pgTable, serial, text, varchar } from 'drizzle-orm/pg-core';
 
-// const Users = pgTable('User', {
-//   id: serial('id').primaryKey(),
-//   name: text('name'),
-//   email: text('email'),
-//   // todoList
-// });
+export const User = pgTable('User', {
+  id: serial('id').primaryKey(),
+  name: text('name'),
+  email: text('email'),
+  // todoList
+});
