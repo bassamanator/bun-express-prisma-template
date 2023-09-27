@@ -1,5 +1,5 @@
 {
-  "plugins": ["typescript-sort-keys", "import"],
+  "plugins": ["@typescript-eslint", "typescript-sort-keys", "import"],
   "extends": [
     "eslint:recommended",
     "plugin:node/recommended",
@@ -12,19 +12,20 @@
     "ecmaVersion": 2020
   },
   "rules": {
-    "node/exports-style": ["error", "module.exports"],
-    "node/file-extension-in-import": "off",
-    "node/prefer-global/buffer": ["error", "always"],
-    "node/prefer-global/console": ["error", "always"],
-    "node/prefer-global/process": ["error", "always"],
-    "node/prefer-global/url-search-params": ["error", "always"],
-    "node/prefer-global/url": ["error", "always"],
-    "node/prefer-promises/dns": "error",
-    "node/prefer-promises/fs": "error",
-    "node/no-unsupported-features/es-syntax": "off",
+    // "node/exports-style": ["error", "module.exports"],
+    // "node/file-extension-in-import": "off",
+    // "node/prefer-global/buffer": ["error", "always"],
+    // "node/prefer-global/console": ["error", "always"],
+    // "node/prefer-global/process": ["error", "always"],
+    // "node/prefer-global/url-search-params": ["error", "always"],
+    // "node/prefer-global/url": ["error", "always"],
+    // "node/prefer-promises/dns": "error",
+    // "node/prefer-promises/fs": "error",
+    // "node/no-unsupported-features/es-syntax": "off",
     "import/no-unresolved": "error", // turn on errors for missing imports
     "typescript-sort-keys/interface": "warn",
-    "typescript-sort-keys/string-enum": "warn"
+    "typescript-sort-keys/string-enum": "warn",
+    "@typescript-eslint/no-unused-vars": "warn"
   },
   "settings": {
     "import/parsers": {
@@ -35,5 +36,6 @@
         "alwaysTryTypes": true // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
       }
     }
-  }
+  },
+  "root": true
 }
