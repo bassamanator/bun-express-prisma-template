@@ -5,11 +5,8 @@ import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
-import MessageResponse from './interfaces/MessageResponse';
 import * as middlewares from './middleware';
 import router from './router';
-
-require('dotenv').config();
 
 const app = express();
 
@@ -21,7 +18,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get<{}, MessageResponse>('/', (req, res) => {
+app.get('/', (req: express.Request, res: express.Response) => {
   res.json({
     message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
   });
