@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    // "module": "NodeNext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    // "moduleResolution": "node",
     "baseUrl": "./src",
     "outDir": "./dist",
     "sourceMap": true,
@@ -10,5 +10,8 @@
     "esModuleInterop": true
   },
   "include": ["./src/**/*.ts", "./test/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true
+  }
 }
