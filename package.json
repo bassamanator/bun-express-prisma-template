@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
+    "@tsconfig/recommended": "^1.0.3",
     "@types/compression": "^1.7.3",
     "@types/cookie-parser": "^1.4.4",
     "@types/cors": "^2.8.14",

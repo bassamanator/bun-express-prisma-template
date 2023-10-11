@@ -1,7 +1,16 @@
 {
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "ts-node": {
+    "esm": true,
+    "files": true,
+    "compilerOptions": {
+      // compilerOptions specified here will override those declared below,
+      // but *only* in ts-node.  Useful if you want ts-node and tsc to use
+      // different options with a single tsconfig.json.
+    }
+  },
   "compilerOptions": {
     "module": "NodeNext",
-    // "moduleResolution": "node",
     "baseUrl": "./src",
     "outDir": "./dist",
     "sourceMap": true,
@@ -10,8 +19,5 @@
     "esModuleInterop": true
   },
   "include": ["./src/**/*.ts", "./test/**/*.ts"],
-  "exclude": ["node_modules"],
-  "ts-node": {
-    "esm": true
-  }
+  "exclude": ["node_modules"]
 }
