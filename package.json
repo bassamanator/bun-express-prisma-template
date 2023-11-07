@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
-    "dev": "nodemon",
+    "dev": "bun --watch ./src/index.ts",
     "build": "tsc",
     "lint": "eslint --fix src test",
     "test": "jest",
@@ -58,7 +58,6 @@
     "husky": "^8.0.3",
     "jest": "^29.7.0",
     "lint-staged": "^14.0.1",
-    "nodemon": "^3.0.1",
     "prettier": "^3.0.3",
     "prisma": "^5.4.2",
     "supertest": "^6.3.3",
