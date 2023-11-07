@@ -12,7 +12,7 @@
     "type-check": "tsc --pretty --noEmit",
     "prepare": "husky install",
     "clean": "rm -rf ./node_modules",
-    "test-start": ". ~/.nvm/nvm.sh && /home/bassam/.bun/bin/bun run clean && /home/bassam/.bun/bin/bun install && /home/bassam/.bun/bin/bun run build && /home/bassam/.bun/bin/bun run start"
+    "full-start": ". ~/.nvm/nvm.sh && bun run clean && bun install && bun run build && bun run start"
   },
   "keywords": [],
   "author": "Bassam Husain",
