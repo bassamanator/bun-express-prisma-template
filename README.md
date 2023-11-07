@@ -4,9 +4,7 @@ Original template: https://github.com/w3cj/express-api-starter.git
 
 How to use this template:
 
-```sh
-
-```
+1. You need bun package manager https://bun.sh/
 
 Includes API Server utilities:
 

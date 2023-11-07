@@ -1,4 +1,3 @@
-import { User } from 'controllers/authentication.ctrl';
 import express from 'express';
 import { get, pick } from 'lodash';
 

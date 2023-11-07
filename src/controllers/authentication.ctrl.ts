@@ -3,14 +3,6 @@ import express from 'express';
 
 import { createToken, getUserByEmail } from '../helpers';
 
-export type User = {
-  email: string | null;
-  emailVerified: boolean | null;
-  id: string;
-  password: string;
-  passwordSalt: string | null;
-};
-
 export const register = async (req: express.Request, res: express.Response) => {
   const { email, password }: { email: string; password: string } = req.body;
   const hash = await bcrypt
