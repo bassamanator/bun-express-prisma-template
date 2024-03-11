@@ -22,11 +22,5 @@ const updateSchema = z.object({
 export default (router: express.Router) => {
   router.post('/auth/register', validate(registerLoginSchema), register);
   router.post('/auth/login', validate(registerLoginSchema), login);
-  router.patch(
-    '/auth/update',
-    validate(updateSchema),
-    isAuthenticated,
-    isAuthOwner,
-    update,
-  );
+  router.patch('/auth/update', validate(updateSchema), isAuthenticated, isAuthOwner, update);
 };

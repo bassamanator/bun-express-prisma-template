@@ -14,8 +14,6 @@ export const getUserById = async (id: string) =>
     where: { id },
   });
 
-export const getUserIdFromReq = (req: express.Request): string | undefined =>
-  get(req, 'identity');
+export const getUserIdFromReq = (req: express.Request): string | undefined => get(req, 'identity');
 
-export const sanitizeUser = (user: User) =>
-  pick(user, ['id', 'email', 'emailVerified']);
+export const sanitizeUser = (user: User) => pick(user, ['id', 'email', 'emailVerified']);

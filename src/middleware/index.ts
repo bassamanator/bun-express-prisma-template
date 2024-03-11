@@ -2,10 +2,10 @@ import { PrismaClient } from '@prisma/client';
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import { merge } from 'lodash';
-import { AnyZodObject } from 'zod';
+import type { AnyZodObject } from 'zod';
 
 import { getUserById, getUserIdFromReq } from '../helpers';
-import { JwtPayloadWithId } from '../interfaces';
+import type { JwtPayloadWithId } from '../interfaces';
 
 export * from './middlewares';
 
@@ -55,11 +55,7 @@ export const isAuthOwner = async (
 
 export const validate =
   (schema: AnyZodObject) =>
-  async (
-    req: express.Request,
-    res: express.Response,
-    next: express.NextFunction,
-  ) => {
+  async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     try {
       await schema.parseAsync({
         body: req.body,

@@ -1,5 +1,5 @@
 import express from 'express';
-import { JwtPayload } from 'jsonwebtoken';
+import type { JwtPayload } from 'jsonwebtoken';
 
 export * from './ErrorResponse';
 export * from './MessageResponse';
