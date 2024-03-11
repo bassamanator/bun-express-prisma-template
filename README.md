@@ -49,10 +49,9 @@ This repo has [prisma](https://prisma.io) integrated for you.
 ## Setup
 
 - You can use this script after you first clone this repo to get things up and running.
-- You can use this script to get a `production` server up and running.
 
 ```sh
-bun run full-start
+bun run ready-all
 ```
 
 This script will do the following for you:
@@ -60,14 +59,14 @@ This script will do the following for you:
 ```sh
 bun run clean # delete node_modules/
 bun install
-bun run prisma-generate # generate prisma client
-bun run build
-bun run start
+bunx prisma migrate dev --name init # https://www.prisma.io/docs/getting-started/quickstart#3-run-a-migration-to-create-your-database-tables-with-prisma-migrate
+bun run dev # start dev server
 ```
 
 ## Production
 
 ```sh
+bun run build
 bun run start
 ```
 

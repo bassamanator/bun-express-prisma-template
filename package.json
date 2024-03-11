@@ -13,7 +13,7 @@
     "prepare": "husky install",
     "clean": "rm -rf ./node_modules",
     "prisma-generate": "prisma generate",
-    "full-start": ". ~/.nvm/nvm.sh && bun run clean && bun install && bun run prisma-generate && bun run build && bun run start"
+    "ready-all": ". ~/.nvm/nvm.sh && bun run clean && bun install && bunx prisma migrate dev --name init && bun run dev"
   },
   "keywords": [],
   "author": "Bassam Husain",
