@@ -7,9 +7,7 @@ const prisma = new PrismaClient();
 
 export const register = async (req: express.Request, res: express.Response) => {
   const { email, password }: { email: string; password: string } = req.body;
-  const hash = await bcrypt
-    .hash(password, 10)
-    .catch(() => res.status(500).end());
+  const hash = await bcrypt.hash(password, 10).catch(() => res.status(500).end());
 
   let user = null;
   try {
@@ -34,22 +32,21 @@ export const update = async (req: express.Request, res: express.Response) => {
   }: { email: string; newPassword: string; password: string } = req.body;
 
   const user = await getUserByEmail(email);
-  if (!user)
-    return res.status(404).json({ message: 'Error changing password' });
+  if (!user) return res.status(404).json({ message: 'Error changing password' });
 
   const match = await bcrypt.compare(currentPassword, user?.password as string);
-  if (!match)
-    return res.status(404).json({ message: 'Error changing password' });
+  if (!match) return res.status(404).json({ message: 'Error changing password' });
 
-  const hash = await bcrypt
-    .hash(newPassword, 10)
-    .catch(() => res.status(500).end());
+  const hash = await bcrypt.hash(newPassword, 10).catch(() => res.status(500).end());
 
   const update = await prisma.user.update({
     where: { id: user.id },
     data: { password: hash as string },
   });
-  return res.status(201).json({ ...sanitizeUser(update as User) });
+
+  const token = createToken((update as User).id);
+
+  return res.status(201).json({ token, ...sanitizeUser(update as User) });
 };
 
 export const login = async (req: express.Request, res: express.Response) => {
