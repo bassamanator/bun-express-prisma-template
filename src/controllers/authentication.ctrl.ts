@@ -49,7 +49,10 @@ export const update = async (req: express.Request, res: express.Response) => {
     where: { id: user.id },
     data: { password: hash as string },
   });
-  return res.status(201).json({ ...sanitizeUser(update as User) });
+
+  const token = createToken((update as User).id);
+
+  return res.status(201).json({ token, ...sanitizeUser(update as User) });
 };
 
 export const login = async (req: express.Request, res: express.Response) => {
