@@ -25,10 +25,10 @@
     "noPropertyAccessFromIndexSignature": false,
 
     // custom
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
-    // "baseUrl": ".",
   },
   "include": ["./src/**/*.ts", "./test/**/*.ts"],
   "exclude": ["node_modules", "ecosystem.config.js"]
