@@ -1,7 +1,7 @@
-import { createToken, getUserByEmail, sanitizeUser } from '@/helpers';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import express from 'express';
+import { createToken, getUserByEmail, sanitizeUser } from '~/helpers';
 
 const prisma = new PrismaClient();
 
