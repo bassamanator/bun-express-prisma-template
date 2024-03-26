@@ -1,6 +1,11 @@
 {
   "plugins": ["@typescript-eslint", "typescript-sort-keys"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic",
+    "plugin:prettier/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "typescript-sort-keys/interface": "warn",
