@@ -1,7 +1,9 @@
 type User = {
-  email: string | null;
-  emailVerified?: Date;
+  createdAt: Date;
+  email: string;
+  emailVerified: Date | null;
   id: string;
   password: string;
   passwordSalt: string | null;
+  updatedAt: Date;
 };

@@ -19,9 +19,9 @@ export const register = async (req: express.Request, res: express.Response) => {
     return res.status(409).json({ message: 'Duplicate email', error });
   }
 
-  const token = createToken((user as User).id);
+  const token = createToken(user.id);
 
-  return res.status(201).json({ token, ...sanitizeUser(user as User) });
+  return res.status(201).json({ token, ...sanitizeUser(user) });
 };
 
 export const update = async (req: express.Request, res: express.Response) => {
@@ -34,7 +34,7 @@ export const update = async (req: express.Request, res: express.Response) => {
   const user = await getUserByEmail(email);
   if (!user) return res.status(404).json({ message: 'Error changing password' });
 
-  const match = await bcrypt.compare(currentPassword, user?.password as string);
+  const match = await bcrypt.compare(currentPassword, user.password);
   if (!match) return res.status(404).json({ message: 'Error changing password' });
 
   const hash = await bcrypt.hash(newPassword, 10).catch(() => res.status(500).end());
@@ -44,9 +44,9 @@ export const update = async (req: express.Request, res: express.Response) => {
     data: { password: hash as string },
   });
 
-  const token = createToken((update as User).id);
+  const token = createToken(update.id);
 
-  return res.status(201).json({ token, ...sanitizeUser(update as User) });
+  return res.status(201).json({ token, ...sanitizeUser(update) });
 };
 
 export const login = async (req: express.Request, res: express.Response) => {
@@ -54,10 +54,10 @@ export const login = async (req: express.Request, res: express.Response) => {
   const user = await getUserByEmail(email);
   if (!user) return res.status(418).json({ message: 'User not found' });
 
-  const match = await bcrypt.compare(password, (user as User).password);
+  const match = await bcrypt.compare(password, user.password);
   if (!match) return res.status(401).json({ message: 'Wrong password' });
 
-  const token = createToken((user as User).id);
+  const token = createToken(user.id);
 
-  return res.status(200).json({ token, ...sanitizeUser(user as User) });
+  return res.status(200).json({ token, ...sanitizeUser(user) });
 };
