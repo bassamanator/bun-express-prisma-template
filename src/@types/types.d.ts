@@ -1,16 +1,9 @@
 type User = {
-  email: string | null;
-  emailVerified?: Date;
+  createdAt: Date;
+  email: string;
+  emailVerified: Date | null;
   id: string;
-  notes: Note[];
   password: string;
   passwordSalt: string | null;
-};
-
-type Note = {
-  content: string;
-  createdAt: Date;
-  id: string;
   updatedAt: Date;
-  userId: string;
 };

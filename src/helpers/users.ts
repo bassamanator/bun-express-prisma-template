@@ -4,12 +4,12 @@ import { get, pick } from 'lodash';
 
 const prisma = new PrismaClient();
 
-export const getUserByEmail = async (email: string) =>
+export const getUserByEmail = async (email: string): Promise<User | null> =>
   prisma.user.findUnique({
     where: { email },
   });
 
-export const getUserById = async (id: string) =>
+export const getUserById = async (id: string): Promise<User | null> =>
   prisma.user.findUnique({
     where: { id },
   });
