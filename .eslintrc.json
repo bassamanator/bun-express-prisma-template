@@ -10,7 +10,8 @@
   "parser": "@typescript-eslint/parser",
   "rules": {
     "typescript-sort-keys/interface": "warn",
-    "typescript-sort-keys/string-enum": "warn"
+    "typescript-sort-keys/string-enum": "warn",
+    "@typescript-eslint/no-unused-vars": "warn"
   }
 }
 

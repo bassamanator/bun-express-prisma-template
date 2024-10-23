@@ -9,7 +9,6 @@ export function notFound(req: Request, res: Response, next: NextFunction) {
   next(error);
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const errorHandler: ErrorRequestHandler = (
   err: Error,
   req: Request,
@@ -21,6 +20,7 @@ export const errorHandler: ErrorRequestHandler = (
   if (isHttpError(err)) {
     statusCode = err.statusCode;
   }
+  console.log(`❗ ${err.name}; ${statusCode};`);
   res.status(statusCode).json({
     message: err.message,
     stack: process.env.NODE_ENV === 'production' ? '🥞' : err.stack,

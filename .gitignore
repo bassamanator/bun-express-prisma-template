@@ -176,3 +176,4 @@ dist
 
 .directory
 .vscode/
+prisma/migrations/

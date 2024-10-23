@@ -15,7 +15,6 @@ model User {
   email         String    @unique
   emailVerified DateTime?
   password      String
-  passwordSalt  String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @default(now()) @updatedAt
 }
