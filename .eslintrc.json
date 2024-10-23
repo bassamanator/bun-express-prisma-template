@@ -4,7 +4,8 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/stylistic",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "rules": {

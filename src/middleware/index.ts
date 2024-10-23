@@ -1,4 +1,3 @@
-import { PrismaClient } from '@prisma/client';
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import { merge } from 'lodash';
@@ -28,6 +27,7 @@ export const isAuthenticated = async (
     next();
   } catch (error) {
     console.log(error);
+    next(error); // CHECKME is this a good pattern?
     return res.status(404).json({ message: 'Denied' });
   }
 };
