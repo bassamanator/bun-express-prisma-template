@@ -5,9 +5,9 @@
 1. You need `bun` package manager installed on your system https://bun.sh/.
 2. Some of the scripts make use of Node Version Manager (`nvm`) https://github.com/nvm-sh/nvm. If you don't want to install it, just search for `nvm` in this repo and adjust.
 
-## Utilities
+## Packages
 
-### API Server utilities
+### API Server packages
 
 - [morgan](https://www.npmjs.com/package/morgan)
   - HTTP request logger middleware for node.js
@@ -18,12 +18,10 @@
 - [cors](https://www.npmjs.com/package/cors)
   - CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 
-### Development utilities
+### Development packages
 
 - [typescript](https://www.npmjs.com/package/typescript)
   - TypeScript is a language for application-scale JavaScript.
-- [ts-node](https://www.npmjs.com/package/ts-node)
-  - TypeScript execution and REPL for node.js, with source map and native ESM support.
 - [eslint](https://www.npmjs.com/package/eslint)
   - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 - [typescript-eslint](https://typescript-eslint.io/)
@@ -42,48 +40,6 @@
 - [lint-staged](https://github.com/lint-staged/lint-staged)
   - Run linters against staged git files and don't let 💩 slip into your code base!
 
-## Setup
-
-- You can use this script after you first clone this repo to get things up and running.
-
-```sh
-bun run ready-all
-```
-
-This script will do the following for you:
-
-```sh
-bun run clean # delete node_modules/
-bun install
-bunx prisma migrate dev --name init # https://www.prisma.io/docs/getting-started/quickstart#3-run-a-migration-to-create-your-database-tables-with-prisma-migrate
-bun run dev # start dev server
-```
-
-## Production
-
-```sh
-bun run build
-bun run start
-```
-
-## Development
-
-```sh
-bun run dev
-```
-
-## Lint
-
-```sh
-bun run lint
-```
-
-## Test
-
-```sh
-bun run test
-```
-
-# Inspired By
+## Forked from and inspired by
 
 https://github.com/w3cj/express-api-starter.git
