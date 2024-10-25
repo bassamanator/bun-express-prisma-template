@@ -1,8 +1,4 @@
-# THIS README IS NOT READY
-
-# Express API Starter with Typescript
-
-Original template found here: https://github.com/w3cj/express-api-starter.git. I've heavily modified it so that you can have an excellent development experience.
+# bun-express-prisma-template
 
 ## How to use this template
 
@@ -10,8 +6,6 @@ Original template found here: https://github.com/w3cj/express-api-starter.git. I
 2. Some of the scripts make use of Node Version Manager (`nvm`) https://github.com/nvm-sh/nvm. If you don't want to install it, just search for `nvm` in this repo and adjust.
 
 ## Utilities
-
-This repo has [prisma](https://prisma.io) integrated for you.
 
 ### API Server utilities
 
@@ -89,3 +83,7 @@ bun run lint
 ```sh
 bun run test
 ```
+
+# Inspired By
+
+https://github.com/w3cj/express-api-starter.git
