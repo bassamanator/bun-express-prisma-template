@@ -12,7 +12,7 @@ export const register = async (
   next: express.NextFunction,
 ) => {
   const { email, password }: { email: string; password: string } = req.body;
-  const hash = await bcrypt.hash(password, 10).catch(() => res.status(500).end());
+  const hash = await bcrypt.hash(password, 10).catch((error) => next(error));
 
   let user = null;
   try {
