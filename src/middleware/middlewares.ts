@@ -1,5 +1,5 @@
 import type { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
-import { isHttpError } from 'http-errors';
+import { isHttpError } from 'http-errors-enhanced';
 
 import type ErrorResponse from '../interfaces/ErrorResponse';
 
